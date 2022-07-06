@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Think Big",
+    "publisher": "NewYork Times",
+    "cover_state": "covered",
+    "publish_date": "2022-01-01"
+  },
+  {
+    "name": "Mechant Of Venise",
+    "publisher": "Kindle",
+    "cover_state": "hardcover",
+    "publish_date": "2012-10-01"
+  },
+  {
+    "name": "Enermy Of The People",
+    "publisher": "NewYork Times",
+    "cover_state": "ebook",
+    "publish_date": "2009-04-01"
+  },
+  {
+    "name": "The River Between",
+    "publisher": "Longhorn",
+    "cover_state": "softcopy",
+    "publish_date": "2020-06-19"
+  },
+  {
+    "name": "the god's must be crazy",
+    "publisher": "sa",
+    "cover_state": "hardcover",
+    "publish_date": "2012-03-04"
+  }
+]

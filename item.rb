@@ -25,9 +25,8 @@ class Item
   end
 end
 
-
 item = Item.new('2020-11-11')
 
 puts item.can_be_archived?
 puts item.move_to_archive
-#@publish_date = '2000-11-11'
+# @publish_date = '2000-11-11'
