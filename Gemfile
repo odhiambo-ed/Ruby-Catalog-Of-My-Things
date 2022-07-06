@@ -1,2 +1,2 @@
-source 'https://rubygems.org' # rubocop:todo Layout/EndOfLine
+source 'https://rubygems.org'
 gem 'rubocop', '>= 1.0', '< 2.0'
