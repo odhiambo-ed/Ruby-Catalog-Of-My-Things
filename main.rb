@@ -23,6 +23,8 @@ class Main
     10 - Exit'
   end
 
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/CyclomaticComplexity
   def handle_menu_selection
     user_input = gets.chomp
     case user_input
@@ -51,6 +53,8 @@ class Main
       puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/MethodLength
 
   def run
     user_input = nil
