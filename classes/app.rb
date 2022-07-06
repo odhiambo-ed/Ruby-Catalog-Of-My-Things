@@ -35,7 +35,8 @@ class App
     puts "Genre \t\t| On spotify? \t| Album Name \t\t| Publish Date"
 
     @albums.each do |album|
-      puts "#{album['genre'].to_s.strip} \t\t| #{album['on_spotify?'].to_s.strip.rjust(10)} \t| #{album['album_name'].to_s.strip.rjust(10)} \t\t| #{album['publish_date'].to_s.strip.rjust(10)}"
+      puts "#{album['genre'].to_s.strip} \t\t| #{album['on_spotify?'].to_s.strip.rjust(10)} \t|
+      #{album['album_name'].to_s.strip.rjust(10)} \t\t| #{album['publish_date'].to_s.strip.rjust(10)}"
     end
   end
 
