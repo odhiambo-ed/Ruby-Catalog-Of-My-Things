@@ -1,8 +1,8 @@
 require_relative './classes/app'
 require_relative './modules/music_album_functions'
 
-class Main  
-  include MusicAlbumFunction  
+class Main
+  include MusicAlbumFunction
 
   def initialize
     @app = App.new
@@ -44,8 +44,8 @@ class Main
       add_new_album_details
     when '9'
       add_new_game_interractively
-    when '10'     
-      puts 'Exiting the application...'      
+    when '10'
+      puts 'Exiting the application...'
       exit
     else
       puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
