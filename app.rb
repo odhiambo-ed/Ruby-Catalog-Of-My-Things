@@ -1,4 +1,7 @@
+require_relative './game/game_controller'
+
 class AppMethod
+  attr_accessor :game_controller
 
   def create_book()
     puts 'create book'
@@ -30,8 +33,5 @@ class AppMethod
   end
   def list_labels()
     puts 'label list is empty'
-  end
-
-  
-  
+  end 
 end
