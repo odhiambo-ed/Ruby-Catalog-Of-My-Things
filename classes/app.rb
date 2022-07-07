@@ -37,7 +37,7 @@ class App
 
     puts "\n----------------------------"
     puts "\nALL ALBUMS\n\n"
-    puts "Genre |On spotify? |Album Name | Publish Date "
+    puts 'Genre |On spotify? |Album Name | Publish Date '
     puts '-------------------------------------------------------'
     @albums.each do |album|
       puts "#{album['genre'].to_s.strip}| #{album['on_spotify?'].to_s.strip.rjust(10)}| #{album['album_name']
