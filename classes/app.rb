@@ -5,10 +5,10 @@ require_relative '../modules/preserver_module'
 class App
   include PreserverModule
 
-   def initialize
+  def initialize
     @albums = []
     @genres = []
-   
+
     load_data
   end
 
@@ -58,16 +58,15 @@ class App
     end
   end
 
-   def preserve_files
+  def preserve_files
     save_data_as_json(@albums, 'albums')
     save_data_as_json(@genres, 'genres')
-  
   end
 
   private
 
   def load_data
     @albums = load_file('albums')
-    @genres = load_file('genres')    
+    @genres = load_file('genres')
   end
 end

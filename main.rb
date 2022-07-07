@@ -6,7 +6,6 @@ class Main
 
   def initialize
     @app = App.new
-    
   end
 
   def menu
@@ -50,7 +49,7 @@ class Main
     when '10'
       puts 'Exiting the application...'
       @app.preserve_files
-      
+
       exit
     else
       puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
