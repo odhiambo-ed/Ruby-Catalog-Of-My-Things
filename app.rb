@@ -1,4 +1,4 @@
-require_relative './game/game_controller'
+require './game/game_controller'
 
 class AppMethod
   attr_accessor :game_controller

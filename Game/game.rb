@@ -1,6 +1,6 @@
 require './item'
 
-class Game
+class Game < Item
   attr_accessor :multiplayer, :last_played_at
 
   def initialize(multiplayer, last_played_at, publish_date = Time.now.year)

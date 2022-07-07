@@ -1,4 +1,5 @@
-require_relative '../Game/game'
+require './class/game'
+
 describe do
   describe '#can_be_archived?' do
     before :each do
