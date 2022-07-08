@@ -1,87 +1,55 @@
+require 'json'
 require_relative '../classes/game'
-require_relative '../classes/author'
-require_relative '../modules/preserver_module'
 
-class GameController
-  include PreserverModule
-  attr_accessor :games, :authors
-
-  def initialize
-    @games = []
-    @authors = []
+module GameController
+  def add_game(game)
+    game_db = './json/games.json'
+    games = []
+    new_game = {
+      'multiplayer' => game.multiplayer,
+      'last_played_at' => game.last_played_at,
+      'publish_date' => game.publish_date
+    }
+    games = JSON.parse(File.read(game_db)) if File.exist?(game_db)
+    games << new_game
+    File.write(game_db, JSON.pretty_generate(games))
   end
-
-  def list_games
-    if @games.empty?
-      puts 'No game available!'
+  def fetch_games
+    game_db = './json/games.json'
+    games = []
+    if File.exist?(game_db)
+      if File.empty?(game_db)
+        games
+      else
+        JSON.parse(File.read(game_db))
+      end
     else
-      @games.each_with_index do |game, index|
-        print "#{index + 1} Multiplayer: #{game.multiplayer}, Last played at: #{game.last_played_at}, "
-        # print "Author: #{game.author.first_name} #{game.author.last_name}"
+      games
+    end
+  end
+  def list_games
+    games = fetch_games
+    if games.empty?
+      puts 'No Games to be displayed'.colorize(color: :magenta)
+    else
+      puts "#{games.count} Games Found!".colorize(color: :magenta)
+      games.each do |game|
+        puts "Players: #{game['multiplayer']}" \
+             "-Last Played: #{game['last_played_at']} - Published: #{game['publish_date']}"
       end
     end
   end
-
-  def list_authors
-    if @authors.empty?
-      puts 'No author available!'
-    else
-      @authors.each_with_index { |author, index| puts "#{index + 1}: #{author.first_name} #{author.last_name}" }
-    end
-  end
-
-  def game_user_input
-    puts 'Please fill the following information:'
-    puts ''
-    puts 'Enter a name (Multiplayer): '
-    @multiplayer = $stdin.gets.chomp
-    while @multiplayer == '' || @multiplayer.length < 2
-      print 'No name entered, enter a valid name: '
-      @multiplayer = $stdin.gets.chomp
-    end
-    print 'When last did you play (Year)?("YYYY"): '
-    @last_played_at = $stdin.gets.chomp
-    while @last_played_at == '' || @last_played_at.length != 4
-      print 'No year entered, enter a valid year("YYYY"): '
-      @last_played_at = $stdin.gets.chomp
-    end
-  end
-
-  def author_user_input
-    puts 'Enter your first name: '
-    @first_name = $stdin.gets.chomp
-    while @first_name == '' || @first_name.length < 2
-      print 'No name entered, enter a valid name: '
-      @first_name = $stdin.gets.chomp
-    end
-    print 'Enter your last name: '
-    @last_name = $stdin.gets.chomp
-    while @last_name == '' || @last_name.length < 2
-      print 'No name entered, enter a valid name: '
-      @last_name = $stdin.gets.chomp
-    end
-  end
-
-  def add_game
-    game_user_input
-    author_user_input
-    author = Author.new(@first_name, @last_name)
-    game = Game.new(@multiplayer, @last_played_at)
-    # author.add_item(game)
-    @games << game unless @games.include?(game)
-    @authors << author unless @authors.include?(author)
-    puts 'Game successfully created'
-  end
-
-  def preserve_files
-    save_data_as_json(@games, 'games')
-    save_data_as_json(@authors, 'authors')
-  end
-
-  private
-
-  def load_data
-    @games = load_file('games')
-    @authors = load_file('authors')
+  def create_game
+    print 'Enter number of players: '
+    multiplayer = gets.chomp
+    print 'Enter Last Played Date format[yyyy-mm-dd]: '
+    last_played_at = gets.chomp
+    print 'Enter Date Published format[yyyy-mm-dd]: '
+    publish_date = gets.chomp
+    new_game = Game.new(multiplayer, last_played_at, publish_date)
+    add_game(new_game)
+    puts 'Game created successfully'.colorize(color: :light_green)
+  rescue StandardError
+    puts 'Cannot create game, check your Input format'.colorize(color: :light_red)
   end
 end

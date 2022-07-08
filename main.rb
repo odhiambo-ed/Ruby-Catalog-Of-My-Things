@@ -1,17 +1,11 @@
 require_relative './classes/app'
 require_relative './modules/music_album_functions'
-require_relative './modules/game_controller'
 
 class Main
-  attr_accessor :game_controller
-
   include MusicAlbumFunction
-
   def initialize
     @app = App.new
-    @game_controller = GameController.new
   end
-
   def menu
     puts "\n"
     puts 'Please choose an option by entering a number:
@@ -26,81 +20,9 @@ class Main
     9  - Add a game
     10 - Exit'
   end
-
   # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/CyclomaticComplexity
   def handle_menu_selection
-    user_input = gets.chomp
-    case user_input
-    when '1'
-      @app.list_all_books
-    when '2'
-      @app.list_all_albums
-    when '3'
-      @game_controller.list_games
-    when '4'
-      @app.list_all_genres
-    when '5'
-      @app.list_all_labels
-    when '6'
-      @game_controller.list_authors
-    when '7'
-      add_new_book_details
-    when '8'
-      add_new_album_details
-    when '9'
-      @game_controller.add_game
-    when '10'
-      puts 'Exiting the application...'
-      @game_controller.preserve_files
-
-      exit
-    else
-      puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
-    end
-  end
-  # rubocop:enable Metrics/CyclomaticComplexity
-  # rubocop:enable Metrics/MethodLength
-
-  def run
-    user_input = nil
-
-    puts 'Welcome to the catalog of my things'
-
-    while user_input != '10'
-      menu
-      handle_menu_selection
-    end
-  end
-end
-
-Main.new.run
-
-class Main
-  include MusicAlbumFunction
-
-  def initialize # rubocop:todo Lint/DuplicateMethods
-    @app = App.new
-  end
-
-  def menu # rubocop:todo Lint/DuplicateMethods
-    puts "\n"
-    puts 'Please choose an option by entering a number:
-    1  - List all books
-    2  - List all music albums
-    3  - List of games
-    4  - List all genres (e.g \'Comedy\', \'Thriller\')
-    5  - List all labels (e.g. \'Gift\', \'New\')
-    6  - List all authors (e.g. \'Stephen King\')
-    7  - Add a book
-    8  - Add a music album
-    9  - Add a game
-    10 - Exit'
-  end
-
-  # rubocop:disable Metrics/MethodLength
-  # rubocop:disable Metrics/CyclomaticComplexity
-  def handle_menu_selection # rubocop:todo Lint/DuplicateMethods
     user_input = gets.chomp
     case user_input
     when '1'
@@ -108,7 +30,7 @@ class Main
     when '2'
       @app.list_all_albums
     when '3'
-      @app.list_all_games
+      @app.list_games
     when '4'
       @app.list_all_genres
     when '5'
@@ -120,11 +42,10 @@ class Main
     when '8'
       add_new_album_details
     when '9'
-      add_new_game_interractively
+      @app.create_game
     when '10'
       puts 'Exiting the application...'
       @app.preserve_files
-
       exit
     else
       puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
@@ -132,12 +53,9 @@ class Main
   end
   # rubocop:enable Metrics/CyclomaticComplexity
   # rubocop:enable Metrics/MethodLength
-
-  def run # rubocop:todo Lint/DuplicateMethods
+  def run
     user_input = nil
-
     puts 'Welcome to the catalog of my things'
-
     while user_input != '10'
       menu
       handle_menu_selection

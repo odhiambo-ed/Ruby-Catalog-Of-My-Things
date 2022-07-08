@@ -1,1 +1,17 @@
-["#<Game:0x000001a9c0fb5548>"]
+[
+  {
+    "multiplayer": "13",
+    "last_played_at": "1999-25-03",
+    "publish_date": "2018-05-06"
+  },
+  {
+    "multiplayer": "24",
+    "last_played_at": "2012-04-01",
+    "publish_date": "2014-09-12"
+  },
+  {
+    "multiplayer": "2",
+    "last_played_at": "2022-06-02",
+    "publish_date": "2000-03-03"
+  }
+]

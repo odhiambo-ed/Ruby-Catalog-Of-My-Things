@@ -49,6 +49,12 @@ For more details, see [the Installation docs page](https://www.ruby-lang.org/en/
 - GitHub: [@ismailakinkunmi](https://github.com/ismailakinkunmiç)
 - LinkedIn: [Adekunle Ismail](https://www.linkedin.com/in/adismail4/)
 
+👤 **joel kalema**
+
+- GitHub: [@joel-kalema](https://github.com/joel-kalema)
+- Twitter: [@JoelJklm](https://twitter.com/JoelJklm)
+- LinkedIn: [joel kalema](https://www.linkedin.com/in/joel-kalema-30518a230/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
