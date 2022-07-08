@@ -15,9 +15,5 @@ describe Label do
       expect(label.color).to eq 'Yellow'
     end
 
-    it 'should add book item object to label items array' do
-      label.add_item(book)
-      expect(label.items[0]).to eq book
-    end
   end
 end

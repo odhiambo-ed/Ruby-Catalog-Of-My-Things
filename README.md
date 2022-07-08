@@ -24,6 +24,10 @@ To get a clone of the project, run `git clone https://github.com/white3d/Ruby-Ca
 cd /Ruby-Catalog-Of-My-Things
 ```
 
+````
+gem install colorize
+````
+
 ### Available Scripts
 
 In the project directory, you can run:

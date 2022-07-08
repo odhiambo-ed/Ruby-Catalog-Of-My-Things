@@ -24,9 +24,5 @@ describe Book do
       expect(bk.cover_state).to eq 'cover_state'
     end
 
-    it 'should detect the book publish_date' do
-      bk = Book.new('name', 'author', 'cover_state', '2018-05-12')
-      expect(bk.publish_date).to eq(Date.parse('2018-05-12'))
-    end
   end
 end
