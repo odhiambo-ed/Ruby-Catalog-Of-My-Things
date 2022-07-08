@@ -15,6 +15,7 @@ class App
     @genres = []
     load_data
   end
+
   def add_album(album_name, publish_date, genre_name, on_spotify)
     new_album_instance = MusicAlbum.new(on_spotify, album_name, publish_date)
     new_genre_instance = Genre.new(genre_name)
@@ -31,6 +32,7 @@ class App
     @albums << hash
     @genres << genre_hash
   end
+
   def list_all_albums
     puts "\nNote: No albums available." if @albums.empty?
     puts "\n----------------------------"
@@ -43,6 +45,7 @@ class App
       puts "\n---------------------------------------------------"
     end
   end
+
   def list_all_genres
     puts "\nNote: No genres available." if @genres.empty?
     puts "\n----------------------------"
@@ -54,11 +57,14 @@ class App
       puts "\n----------------------------"
     end
   end
+
   def preserve_files
     save_data_as_json(@albums, 'albums')
     save_data_as_json(@genres, 'genres')
   end
+
   private
+
   def load_data
     @albums = load_file('albums')
     @genres = load_file('genres')

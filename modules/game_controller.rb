@@ -14,6 +14,7 @@ module GameController
     games << new_game
     File.write(game_db, JSON.pretty_generate(games))
   end
+
   def fetch_games
     game_db = './json/games.json'
     games = []
@@ -27,6 +28,7 @@ module GameController
       games
     end
   end
+
   def list_games
     games = fetch_games
     if games.empty?
@@ -39,6 +41,7 @@ module GameController
       end
     end
   end
+
   def create_game
     print 'Enter number of players: '
     multiplayer = gets.chomp

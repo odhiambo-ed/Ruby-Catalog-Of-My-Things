@@ -6,6 +6,7 @@ class Main
   def initialize
     @app = App.new
   end
+
   def menu
     puts "\n"
     puts 'Please choose an option by entering a number:
@@ -20,6 +21,7 @@ class Main
     9  - Add a game
     10 - Exit'
   end
+
   # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/CyclomaticComplexity
   def handle_menu_selection
@@ -51,6 +53,7 @@ class Main
       puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
     end
   end
+
   # rubocop:enable Metrics/CyclomaticComplexity
   # rubocop:enable Metrics/MethodLength
   def run
