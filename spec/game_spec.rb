@@ -4,7 +4,6 @@ require_relative '../classes/game'
 describe Game do
   game = Game.new('22', '2022-06-01', '1960-05-12')
   context '... this class...' do
-
     it 'should detect the game multiplayer' do
       expect(game.multiplayer).to eq '22'
     end

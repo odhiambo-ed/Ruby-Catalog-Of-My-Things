@@ -23,6 +23,5 @@ describe Book do
       bk = Book.new('name', 'author', 'cover_state', '2018-05-12')
       expect(bk.cover_state).to eq 'cover_state'
     end
-
   end
 end
