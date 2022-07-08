@@ -1,0 +1,56 @@
+[
+  {
+    "name": "The India Story",
+    "publisher": "Columbus",
+    "cover_state": "Y",
+    "publish_date": "2022-01-01"
+  },
+  {
+    "name": "Pride, Prejudice and Punditry",
+    "publisher": "amazon",
+    "cover_state": "N",
+    "publish_date": "2022-06-01"
+  },
+  {
+    "name": "Queen of Fire",
+    "publisher": "Edinburgh",
+    "cover_state": "N",
+    "publish_date": "2014-01-01"
+  },
+  {
+    "name": "The Maverick Effect",
+    "publisher": "Woodstock",
+    "cover_state": "Y",
+    "publish_date": "2000-12-12"
+  },
+  {
+    "name": "Tomb of Sand",
+    "publisher": "New York City",
+    "cover_state": "Y",
+    "publish_date": "2012-03-04"
+  },
+  {
+    "name": "The River Between",
+    "publisher": "Longhorn",
+    "cover_state": "Y",
+    "publish_date": "2012-10-04"
+  },
+  {
+    "name": "The Little Book of Joy",
+    "publisher": "Detroit",
+    "cover_state": "Y",
+    "publish_date": "2012-10-04"
+  },
+  {
+    "name": "Fearless Governance",
+    "publisher": "Cambridge",
+    "cover_state": "Y",
+    "publish_date": "2012-10-04"
+  },
+  {
+    "name": "Enemy Of The People",
+    "publisher": "NewYork Times",
+    "cover_state": "Y",
+    "publish_date": "2019-10-07"
+  }
+]
