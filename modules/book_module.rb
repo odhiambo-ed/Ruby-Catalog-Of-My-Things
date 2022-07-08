@@ -1,4 +1,5 @@
 require 'json'
+require 'colorize'
 require_relative '../classes/book'
 
 module BooksDataController
@@ -39,7 +40,7 @@ module BooksDataController
     print 'Enter the publisher: '
     publisher = gets.chomp
 
-    print 'Enter Cover state: '
+    print 'Enter Cover State Good (Y) OR Bad (N): '
     cover_state = gets.chomp
 
     print 'Enter date published [yyyy-mm-dd]: '
@@ -59,9 +60,10 @@ module BooksDataController
     else
       puts "#{books.count} Books Found!".colorize(color: :magenta)
       books.each do |book|
-        puts "Name: #{book['name']}" \
-             "- Publisher: #{book['publisher']} - Cover State: #{book['cover_state']}" \
-             "- Published Date: #{book['publish_date']}"
+        puts "#{book['name']}" \
+             " | Publisher: #{book['publisher']} | Cover State: #{book['cover_state']}" \
+             " | Published Date: #{book['publish_date']}"
+        puts '-------------------------------------------------------------------------------------------------------------------'
       end
     end
   end

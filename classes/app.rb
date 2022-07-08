@@ -1,9 +1,13 @@
 require_relative './music_album'
 require_relative './genre'
 require_relative '../modules/preserver_module'
+require_relative '../modules/book_module'
+require_relative '../modules/label_module'
 
 class App
   include PreserverModule
+  include BooksDataController
+  include LabelsDataController
 
   def initialize
     @albums = []
