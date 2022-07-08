@@ -3,7 +3,6 @@ require_relative './modules/music_album_functions'
 
 class Main
   include MusicAlbumFunction
-
   def initialize
     @app = App.new
   end
@@ -33,7 +32,7 @@ class Main
     when '2'
       @app.list_all_albums
     when '3'
-      @app.list_all_games
+      @app.list_games
     when '4'
       @app.list_all_genres
     when '5'
@@ -45,24 +44,21 @@ class Main
     when '8'
       add_new_album_details
     when '9'
-      add_new_game_interractively
+      @app.create_game
     when '10'
       puts 'Exiting the application...'
       @app.preserve_files
-
       exit
     else
       puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
     end
   end
+
   # rubocop:enable Metrics/CyclomaticComplexity
   # rubocop:enable Metrics/MethodLength
-
   def run
     user_input = nil
-
     puts 'Welcome to the catalog of my things'
-
     while user_input != '10'
       menu
       handle_menu_selection

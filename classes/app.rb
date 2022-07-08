@@ -3,16 +3,16 @@ require_relative './genre'
 require_relative '../modules/preserver_module'
 require_relative '../modules/book_module'
 require_relative '../modules/label_module'
+require_relative '../modules/game_controller'
 
 class App
   include PreserverModule
   include BooksDataController
   include LabelsDataController
-
+  include GameController
   def initialize
     @albums = []
     @genres = []
-
     load_data
   end
 
@@ -20,25 +20,21 @@ class App
     new_album_instance = MusicAlbum.new(on_spotify, album_name, publish_date)
     new_genre_instance = Genre.new(genre_name)
     new_album_instance.genre = new_genre_instance
-
     hash = {
       'album_name' => new_album_instance.name,
       'publish_date' => new_album_instance.publish_date,
       'on_spotify?' => new_album_instance.on_spotify,
       'genre' => new_genre_instance.name
     }
-
     genre_hash = {
       'genre_name' => new_genre_instance.name
     }
-
     @albums << hash
     @genres << genre_hash
   end
 
   def list_all_albums
     puts "\nNote: No albums available." if @albums.empty?
-
     puts "\n----------------------------"
     puts "\nALL ALBUMS\n\n"
     puts 'Genre |On spotify? |Album Name | Publish Date '
@@ -52,7 +48,6 @@ class App
 
   def list_all_genres
     puts "\nNote: No genres available." if @genres.empty?
-
     puts "\n----------------------------"
     puts "\nALL GENRES\n\n"
     puts "\Name"
