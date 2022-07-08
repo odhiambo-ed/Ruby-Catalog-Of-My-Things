@@ -29,7 +29,7 @@ class Main
     user_input = gets.chomp
     case user_input
     when '1'
-      @app.list_all_books
+      @app.list_books
     when '2'
       @app.list_all_albums
     when '3'
@@ -37,11 +37,11 @@ class Main
     when '4'
       @app.list_all_genres
     when '5'
-      @app.list_all_labels
+      @app.list_labels
     when '6'
       @app.list_all_authors
     when '7'
-      add_new_book_details
+      @app.create_book
     when '8'
       add_new_album_details
     when '9'
