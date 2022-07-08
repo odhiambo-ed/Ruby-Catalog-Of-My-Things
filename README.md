@@ -8,7 +8,7 @@ This is Ruby group capstone project where we created a console app that will hel
 
 ## Demo Video
 
-[Video Link](https://drive.google.com/file/d/14h-QxDMKIIeLy5qgOlaipy0fM9Cqg0vQ/view?usp=sharing)
+[Video Link](https://drive.google.com/file/d/1X0nwMes1jkyZRFTucSQRmC4g1OzDx3Jx/view?usp=sharing)
 
 
 ## Built With
