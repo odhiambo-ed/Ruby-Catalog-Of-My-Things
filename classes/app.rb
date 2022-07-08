@@ -4,12 +4,15 @@ require_relative '../modules/preserver_module'
 require_relative '../modules/book_module'
 require_relative '../modules/label_module'
 require_relative '../modules/game_controller'
+require_relative '../modules/author'
 
 class App
   include PreserverModule
   include BooksDataController
   include LabelsDataController
   include GameController
+  include SourceModule
+
   def initialize
     @albums = []
     @genres = []

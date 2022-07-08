@@ -38,7 +38,7 @@ class Main
     when '5'
       @app.list_labels
     when '6'
-      @app.list_all_authors
+      @app.list_sources
     when '7'
       @app.create_book
     when '8'
