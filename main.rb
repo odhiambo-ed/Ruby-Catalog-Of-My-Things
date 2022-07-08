@@ -1,68 +1,73 @@
-require './app'
-class MainEntry
+require_relative './classes/app'
+require_relative './modules/music_album_functions'
 
-  puts 'Welcome to catalog of my things App'
+class Main
+  include MusicAlbumFunction
 
-   def self.page
+  def initialize
+    @app = App.new
+  end
+
+  def menu
     puts "\n"
-    puts 'Please choose an option by entering a number: '
-
-      @content = {
-      '1' => 'List all books',
-      '2' => 'List all music albums', 
-      '3' => 'List of games',
-      '4' => 'List all genres (e.g \'Comedy\', \'Thriller\')',
-      '5' =>  'List all labels (e.g. \'Gift\', \'New\')',
-      '6' =>  'List all authors (e.g. \'Stephen King\')',  
-      '7' => 'Add a book',
-      '8' => 'Add a music album',
-      '9' => 'Add a game',
-      '10' => 'Exit'
-     } 
-
-
-    @content.each do |index, string|
-      puts "#{index} - #{string}"
-    end
-
-    Integer(gets.chomp)
+    puts 'Please choose an option by entering a number:
+    1  - List all books
+    2  - List all music albums
+    3  - List of games
+    4  - List all genres (e.g \'Comedy\', \'Thriller\')
+    5  - List all labels (e.g. \'Gift\', \'New\')
+    6  - List all authors (e.g. \'Stephen King\')
+    7  - Add a book
+    8  - Add a music album
+    9  - Add a game
+    10 - Exit'
   end
 
-  method = AppMethod.new
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/CyclomaticComplexity
+  def handle_menu_selection
+    user_input = gets.chomp
+    case user_input
+    when '1'
+      @app.list_all_books
+    when '2'
+      @app.list_all_albums
+    when '3'
+      @app.list_all_games
+    when '4'
+      @app.list_all_genres
+    when '5'
+      @app.list_all_labels
+    when '6'
+      @app.list_all_authors
+    when '7'
+      add_new_book_details
+    when '8'
+      add_new_album_details
+    when '9'
+      add_new_game_interractively
+    when '10'
+      puts 'Exiting the application...'
+      @app.preserve_files
 
-  loop do
-    case page
-    when 1
-      method.list_books
-    when 2
-      method.list_musics
-    when 3
-      method.list_games
-    when 4
-      method.list_authors
-    when 5
-      method.list_genres
-    when 6
-      method.list_labels
-    when 7
-      method.create_book
-    when 8
-      method.create_music
-    when 9
-      method.create_game
-    when 10
-      puts 'Thank you for using the app!'
-      exit    
+      exit
     else
-      puts 'Choose a number between 1 to 9'
+      puts "\nERROR: Invalid option. Please select a digit from (1-10)\n"
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/MethodLength
 
- 
+  def run
+    user_input = nil
+
+    puts 'Welcome to the catalog of my things'
+
+    while user_input != '10'
+      menu
+      handle_menu_selection
+    end
+  end
 end
 
-def main
-  MainEntry.New
-end
-
-main
+Main.new.run
