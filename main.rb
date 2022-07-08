@@ -1,11 +1,15 @@
 require_relative './classes/app'
 require_relative './modules/music_album_functions'
+require_relative './modules/game_controller'
 
 class Main
+  attr_accessor :game_controller
+
   include MusicAlbumFunction
 
   def initialize
     @app = App.new
+    @game_controller = GameController.new
   end
 
   def menu
@@ -33,22 +37,22 @@ class Main
     when '2'
       @app.list_all_albums
     when '3'
-      @app.list_all_games
+      @game_controller.list_games
     when '4'
       @app.list_all_genres
     when '5'
       @app.list_all_labels
     when '6'
-      @app.list_all_authors
+      @game_controller.list_authors
     when '7'
       add_new_book_details
     when '8'
       add_new_album_details
     when '9'
-      add_new_game_interractively
+      @game_controller.add_game
     when '10'
       puts 'Exiting the application...'
-      @app.preserve_files
+      @game_controller.preserve_files
 
       exit
     else

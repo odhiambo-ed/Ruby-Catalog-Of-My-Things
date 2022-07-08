@@ -4,7 +4,6 @@ require_relative '../modules/preserver_module'
 
 class App
   include PreserverModule
-
   def initialize
     @albums = []
     @genres = []
