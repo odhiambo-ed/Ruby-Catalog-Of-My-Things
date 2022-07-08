@@ -61,8 +61,8 @@ module BooksDataController
       puts "#{books.count} Books Found!".colorize(color: :magenta)
       books.each do |book|
         puts "#{book['name']}" \
-             " | Publisher: #{book['publisher']} | Cover State: #{book['cover_state']}" \
-             " | Published Date: #{book['publish_date']}"
+             "| Publisher: #{book['publisher']} | Cover State: #{book['cover_state']}" \
+             "| Published Date: #{book['publish_date']}"
         puts '-------------------------------------------------------------------------------------------------------------------'
       end
     end
