@@ -47,7 +47,7 @@ class MainEntry
     when 8
       method.create_music
     when 9
-      method.create_game
+      method.games
     when 10
       puts 'Thank you for using the app!'
       exit
@@ -61,4 +61,4 @@ def main
   MainEntry.New
 end
 
-main
+main(true)

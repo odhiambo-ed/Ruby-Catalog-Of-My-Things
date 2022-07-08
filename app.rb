@@ -3,6 +3,10 @@ require './game/game_controller'
 class AppMethod
   attr_accessor :game_controller
 
+  def initialize
+    @game_controller = GameController.new
+  end
+
   def create_book()
     puts 'create book'
   end
@@ -11,8 +15,24 @@ class AppMethod
     puts 'create music'
   end
 
-  def create_game()
-    puts 'create game'
+  def games
+    puts "
+    1. List all games
+    2. List all authors
+    3. Add new game
+    "
+    choice = gets.chomp
+    case choice
+    when '1'
+      @game_controller.list_games
+    when '2'
+      @game_controller.list_authors
+    when '3'
+      @game_controller.add_game
+    else
+      puts 'Invalid choice'
+      games
+    end
   end
 
   def list_books()
