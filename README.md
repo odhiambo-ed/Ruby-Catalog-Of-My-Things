@@ -6,6 +6,10 @@ This is Ruby group capstone project where we created a console app that will hel
 
 ![](https://github.com/white3d/Ruby-Catalog-Of-My-Things/blob/feature-group/Screenshot%202022-07-08%20at%2020.28.41.png?raw=true)
 
+## Demo Video
+
+[Video Link](https://drive.google.com/file/d/14h-QxDMKIIeLy5qgOlaipy0fM9Cqg0vQ/view?usp=sharing)
+
 
 ## Built With
 
