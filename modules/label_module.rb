@@ -37,7 +37,7 @@ module LabelsDataController
     else
       puts "#{labels.count} Labels Found!".colorize(color: :magenta)
       labels.each do |label|
-        puts "Title: #{label['title']} - Color: #{label['color']}"
+        puts "Title: #{label['title']} | Color: #{label['color']}"
       end
     end
   end
