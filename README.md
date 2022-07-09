@@ -72,7 +72,7 @@ For more details, see [the Installation docs page](https://www.ruby-lang.org/en/
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/white3d/Ruby-Catalog-Of-My-Things/issues)
 
 ## Show your support
 
