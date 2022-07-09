@@ -1,7 +1,19 @@
 -- Create Database
 CREATE DATABASE catalog_of_things;
-DROP IF EXISTS music_albums, genres, books, labels, sources, authors, games;
+DROP IF EXISTS music_albums, item, genres, books, labels, sources, authors, games;
 
+CREATE TABLE item(
+    id SERIAL PRIMARY KEY,
+    genre_id INT,
+    author_id INT,
+    source_id INT,
+    label_id INT,
+    publish_date DATE,
+    archived BOOLEAN,
+    FOREIGN KEY (genre_id) REFERENCES genre(id),
+    FOREIGN KEY (author_id) REFERENCES author(id),
+    FOREIGN KEY (label_id) REFERENCES label(id)
+    )
 
 CREATE TABLE labels (
   id SERIAL PRIMARY KEY,
