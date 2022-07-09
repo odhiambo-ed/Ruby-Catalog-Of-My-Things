@@ -8,7 +8,7 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 500
 Metrics/MethodLength:
   Max: 20
 Metrics/AbcSize:
@@ -31,6 +31,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/EndOfLine:
+  EnforcedStyle: crlf
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
