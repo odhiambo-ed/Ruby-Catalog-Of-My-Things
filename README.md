@@ -23,6 +23,8 @@ This is Ruby group capstone project where we created a console app that will hel
 
 ## Get Started
 
+### Run
+
 ```
 To get a clone of the project, run `git clone https://github.com/white3d/Ruby-Catalog-Of-My-Things.git`
 ```
@@ -35,11 +37,11 @@ cd /Ruby-Catalog-Of-My-Things
 gem install colorize
 ````
 
+````
+ruby main.rb
+````
+
 ### Available Scripts
-
-In the project directory, you can run:
-
-**`run ruby <file-name>`**
 
 Gets all the required dependencies of the projects.
 
